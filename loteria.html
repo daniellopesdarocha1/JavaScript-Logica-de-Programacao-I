@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Loteria</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: cadetblue;
+            color: aliceblue;
+            position: absolute;
+            top: 200px;
+            right: 350px;
+            font-size: 100%;
+        }
+    </style>
+</head>
+<body>
+<script>
+    
+    document.write("<h1>Simulador da Mega Sena</h1>");
+    document.write("<h2>Seu Jogo foi:</h2>");
+    var vetorJogador = [];
+    for (var i = 0; i <= 5; i++){
+        vetorJogador[i] = parseInt(prompt("Digite o número:"));
+        document.write("[" + vetorJogador[i] + "] ");
+    } 
+    
+    document.write("<h2>Os números sorteados foram:</h2>");    
+    var vetorSorteados = [];
+    for (var i = 0; i <= 5; i++){
+        var numerosSorteados = Math.round(Math.random()*60);
+        vetorSorteados[i] = numerosSorteados;
+        document.write("[" + vetorSorteados[i] + "] ");
+    } 
+    
+    var qtdAcertos = 0;
+    var acertos = [];
+    for (var i = 0; i <= 5; i++){
+        for (var j = 0; j <= 5; j++){
+            if(vetorJogador[i] == vetorSorteados[j]){
+                acertos[i] = vetorJogador[i];
+                qtdAcertos++;
+            }
+        }
+    }
+    if (qtdAcertos == 0){
+        document.write("<h2>Que pena, você não acertou nenhum número, tente outra vez.</h2>")
+    }else{
+        document.write("<h2>Numeros que você acertou:</h2>");
+        for (var i = 0; i <= 5; i++){
+            if(acertos[i] >= 0){
+                document.write("[" + acertos[i] + "] ");
+            }
+        }
+    }
+    
+    if(qtdAcertos == 4){
+        document.write("<br>Parabéns! Você acertou a Quadra!");
+   }
+    if(qtdAcertos == 5){
+        document.write("<br>Parabéns! Você acertou a Quina!");   
+   }
+    if(qtdAcertos == 6){
+        document.write("<br>Parabéns! Você acertou a Sena!");
+   }
+</script>   
+</body>
+</html>

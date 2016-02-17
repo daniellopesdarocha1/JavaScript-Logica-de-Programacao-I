@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<h2>Placar Futebol</h2>
+
+<script>
+    
+    var pulalinha = function(){
+        document.write("<br><br>");
+    }
+    var mostra = function(frase){
+        document.write(frase);
+        pulalinha();
+    }
+    
+    var calculaPontos = function(vitorias, empates){
+        var pontos = (vitorias * 3) + empates;
+        return pontos;
+    }
+    
+    var vitoriasCDC = parseInt(prompt("Quantos jogos CDC venceu?"));
+    var empatesCDC = parseInt(prompt("Quantos jogos CDC empatou?"));
+    var pontosCDC = calculaPontos(vitoriasCDC, empatesCDC);
+    
+    var vitoriasLivros = parseInt(prompt("Quantos jogos Livros venceu?"));
+    var empatesLivros = parseInt(prompt("Quantos jogos Livros empatou?"));
+    var pontosLivros = calculaPontos(vitoriasLivros, empatesLivros);
+    
+    if (pontosCDC > pontosLivros){
+        mostra("CDC esta indo Melhor do que Livros Velhos!");
+    } 
+    
+    if (pontosCDC == pontosLivros){
+        mostra("CDC esta Empatado com Livros Velhos.");
+    } else {
+        mostra("CDC esta indo Pior do que Livros Velhos");
+    }
+    
+</script>

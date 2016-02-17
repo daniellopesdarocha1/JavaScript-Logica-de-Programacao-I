@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+
+<h2>Anos de Copa do Mundo</h2>
+
+<script>
+
+    var mostra = function(frase){
+        document.write(frase + "<br>");
+    }
+    
+    var anoDeCopa = parseInt(prompt("Informe o ano inicial."));
+    var anoLimite = parseInt(prompt("Informe o ano limite."));
+    
+    while(anoDeCopa <= anoLimite){
+        mostra(anoDeCopa + " Tem copa!");
+        anoDeCopa = anoDeCopa + 4;
+    }
+    
+    mostra("Ufa! Estes foram os anos de copa até " + anoLimite);
+
+</script>

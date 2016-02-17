@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+
+<h2>Familiares</h2>
+
+<script>
+
+    var mostra = function(frase){
+        document.write(frase + "<br>");
+    }
+    
+    var totalFamiliares = parseInt(prompt("Quantos familiares você tem?"));
+    var somaIdades = 0;
+    var numero = 1;
+    
+    while(numero <= totalFamiliares){
+        var idade = parseInt(prompt("Informe a Idade do familiar."));
+        somaIdades = somaIdades + idade;
+        
+        numero++;
+    }
+    
+    alert("A soma é " + somaIdades);
+    
+
+ 
+</script>
